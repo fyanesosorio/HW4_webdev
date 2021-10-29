@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <title>Binary to Decimal Converter</title>
+    </head>
+
+    <body>
+        <h1>Binary to Decimal Converter</h1>
+        <textarea id="txt" name="ipt" cols="32" rows="1" autofocus></textarea>
+        <button type="button" onclick= "binaryToDecimal()">submit</button>
+        <p id="opt"> </p>
+
+        <script type="text/javascript">
+            function binaryToDecimal() {
+                let binary = document.getElementById("txt").value;
+                let exp = binary.length -1;
+                let val;
+                let sum = 0;
+
+                for(let i = 0; i < binary.length; i++) {
+                    if(binary.charAt(i) == 1) {
+                    sum += parseInt(Math.pow(2, exp));
+                    }
+                exp --;
+                }
+
+                document.getElementById("opt").innerHTML = sum;
+            }
+        </script>
+    </body>
